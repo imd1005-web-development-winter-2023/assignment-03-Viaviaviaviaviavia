@@ -1,55 +1,101 @@
-/*
-  CSS File
+/* 
+Fonts:
+font-family: swing-king, sans-serif;
+font-weight: 400;
+font-style: normal;
+
+font-family: ruddy, sans-serif;
+font-weight: 700;
+font-style: normal;
+
+
+Colour pallet:
+#9DB1E8
+#E7E4F5
+#303030
+#72E2ED
+#00C296
+#F8FCFD
+#DEF8FB
 */
 
-/*
- VARIABLES
-*/
-:root {
-  /* Core colours */
-  /* https://coolors.co/palette/e63946-f1faee-a8dadc-457b9d-1d3557 */
-  --colour-amaranth: #e63946;
-  --colour-peppermint: #f1faee;
-  --colour-aquaisland: #a8dadc;
-  --colour-wedgewood: #457b9d;
-  --colour-cello: #1d3557;
 
-  /* Header configuration */
-  --header-heading-colour: var(--colour-peppermint);
-
-  /* Body configuration */
-  --body-default-colour: var(--colour-cello);
-  --body-background-colour: var(--colour-peppermint);
+/*header*/
+header {
+    background-color: #F8FCFD;
 }
 
-/*
-  PAGE / BODY
-*/
+header ul {
+    border: solid red 1px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2rem;
+}
+
+header ul .left {
+    border: solid 1px red;
+    margin-left: 20rem;
+}
+
+header ul .scoot {
+    margin-left: 8rem;
+}
+
+header h2 {
+    color: #00C296;
+    font-size: 55px;
+}
+
+/*List*/
+
+.notepad {
+    display: flex;
+    border: 1px solid red;
+    margin: 17rem;
+}
+
+
+
+
+/*footer*/
+footer {
+    background-color: #00C296;
+    padding: 2rem;
+}
+
 body {
-  font-family: Arial, Helvetica, sans-serif;
-  color: var(--body-default-colour);
-  background-color: var(--body-background-colour);
+    background-image: linear-gradient(#DEF8FB, #72E2ED);
 }
 
-main {
-  min-height: 100vh;
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
+
+h2 {
+    font-family: ruddy, sans-serif;
+    font-weight: 700;
+    font-style: normal;
+
 }
 
-/*
-  Screen reader text utility class
-*/
+.list li p {
+    font-family: swing-king, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+/****** Screen reader text utility class- that I stole from excersize 15.
+is that ok???? I didn't know how to do it on my own but still wanted it here
+I hope that's ok PART 2 because I haven't gotten feedback from assignment 2
+back yet and forgot to ask about it lol *******/
 .sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border-width: 0;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
 }
