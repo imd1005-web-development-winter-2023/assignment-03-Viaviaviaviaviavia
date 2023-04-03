@@ -69,27 +69,39 @@
                 <!--form time form time-->
                 <div class="pencil">
                     <img src="./images/pencil-tip.svg" alt="pencil shaped textbox" width="70" height="70">
-                    <form>
+                    <form class="add-todo">
                         <label for="todo"></label>
-                        <input type="text" id="todo" name="todo" placeholder="Add an item to your list!" />
+                        <input type="text" id="todo-list" name="todo" placeholder="Add an item to your list!" />
 
                         <button type="submit">Add</button>
                     </form>
                 </div>
                 <ul class="list">
-                    <li>
-                        <img src="./images/sunflower-sticker.png" alt="completed" width="55" height="55">
+                    <li class="done">
+                        <img src="./images/sunflower-sticker.png" class="finished" alt="completed" width="55"
+                            height="55">
+                        <img src="./images/empty-checkbox.svg" class="unfinished" alt="incomplete" width="55"
+                            height="55">
                         <p>You've completed everything on your todo list!</p>
+                        <button id="todo-0" data-todo="0">Delete</button>
                     </li>
 
-                    <li>
-                        <img src="./images/empty-checkbox.svg" alt="incomplete" width="55" height="55">
+                    <li class="not-done">
+                        <img src="./images/sunflower-sticker.png" class="finished" alt="completed" width="55"
+                            height="55">
+                        <img src="./images/empty-checkbox.svg" class="unfinished" alt="incomplete" width="55"
+                            height="55">
                         <p> empty </p>
+                        <button id="todo-1" data-todo="1">Delete</button>
                     </li>
 
-                    <li>
-                        <img src="./images/empty-checkbox.svg" alt="incomplete" width="55" height="55">
+                    <li class="not-done">
+                        <img src="./images/sunflower-sticker.png" class="finished" alt="completed" width="55"
+                            height="55">
+                        <img src="./images/empty-checkbox.svg" class="unfinished" alt="incomplete" width="55"
+                            height="55">
                         <p> empty </p>
+                        <button id="todo-2" data-todo="2">Delete</button>
                     </li>
                 </ul>
             </div>
