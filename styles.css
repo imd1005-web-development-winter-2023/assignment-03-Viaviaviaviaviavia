@@ -91,6 +91,22 @@ header h2 {
 
 }
 
+.list button {
+    background-color: #E7E4F5;
+    height: 55px;
+    font-family: ruddy, sans-serif;
+    font-weight: 100;
+    font-style: normal;
+}
+
+.list .done .unfinished {
+    display: none;
+}
+
+.list .not-done .finished {
+    display: none;
+}
+
 /*the entire pencil*/
 .pencil {
     display: flex;
