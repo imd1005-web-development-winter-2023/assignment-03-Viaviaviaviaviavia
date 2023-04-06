@@ -1,44 +1,129 @@
-//
-//  JS File
-//  You may remove the code below - it's just boilerplate
-//
+let todoArray = [];
 
-//
-// Variables
-//
+const todoTest = {
+    name: "do this",
+    isDone: false,
+};
 
-// Constants
-const appID = "app";
-const headingText = "To do. To done. ✅";
+const todoListElement = document.querySelector(".todo-list");
 
-// Variables
+// todoListElement.classList.add("test");
 
-// DOM Elements
-let appContainer = document.getElementById(appID);
+// const newListItem = document.createElement("li");
 
-//
-// Functions
-//
+// newListItem.classList.add("not-done");
 
-// Add a heading to the app container
-function inititialise() {
-  // If anything is wrong with the app container then end
-  if (!appContainer) {
-    console.error("Error: Could not find app contianer");
-    return;
-  }
+// todoListElement.appendChild(newListItem);
+// ///////////////////////////////////////
+// const imgChecked = document.createElement("img");
 
-  // Create an h1 and add it to our app
-  const h1 = document.createElement("h1");
-  h1.innerText = headingText;
-  appContainer.appendChild(h1);
+// imgChecked.src = "./images/sunflower-sticker.png";
+// imgChecked.classList.add("finished");
+// imgChecked.alt = "complete";
+// imgChecked.width = "55";
+// imgChecked.height = "55";
 
-  // Init complete
-  console.log("App successfully initialised");
+// newListItem.appendChild(imgChecked);
+// ///////////////////////////////////////
+// const imgUnchecked = document.createElement("img");
+
+// imgUnchecked.src = "./images/empty-checkbox.svg";
+// imgUnchecked.classList.add("unfinished");
+// imgUnchecked.alt = "incomplete";
+// imgUnchecked.width = "55";
+// imgUnchecked.height = "55";
+
+// newListItem.appendChild(imgUnchecked);
+// ///////////////////////////////////////
+// const todoText = document.createElement("p");
+
+// todoText.textContent = "test";
+
+// newListItem.appendChild(todoText);
+// //////////////////////////////////////
+// const todoDeleteButton = document.createElement("button");
+
+// todoDeleteButton.textContent = "Delete";
+// //idk how buttons work yet
+// newListItem.appendChild(todoDeleteButton);
+// //////////////////////////////////////
+
+
+function drawList() {
+    while (todoListElement.hasChildNodes()) {
+        todoListElement.removeChild(todoListElement.firstChild);
+    }
+
+    for (let i = 0; i < todoArray.length; i++) {
+        const newListItem = document.createElement("li");
+
+        if (todoArray[i].isDone === true) {
+            newListItem.classList.add("done");
+        } else {
+            newListItem.classList.add("not-done");
+        }
+
+        todoListElement.appendChild(newListItem);
+        ///////////////////////////////////////
+        const img = document.createElement("img");
+
+        img.width = "55";
+        img.height = "55";
+
+        if (todoArray[i].isDone === true) {
+            img.src = "./images/sunflower-sticker.png";
+            img.alt = "complete";
+        } else {
+            img.src = "./images/empty-checkbox.svg";
+            img.alt = "incomplete";
+        }
+
+        img.addEventListener("click", (event) => {
+            console.log("we did it boys");
+            if (todoArray[i].isDone === true) {
+                todoArray[i].isDone = false;
+            } else {
+                todoArray[i].isDone = true;
+            }
+            drawList();
+        });
+
+        newListItem.appendChild(img);
+        ///////////////////////////////////////
+        const todoText = document.createElement("p");
+
+        todoText.textContent = todoArray[i].name;
+
+        newListItem.appendChild(todoText);
+        //////////////////////////////////////
+        const todoDeleteButton = document.createElement("button");
+
+        todoDeleteButton.textContent = "Delete";
+
+        todoDeleteButton.addEventListener("click", (event) => {
+            console.log(event.target, i);
+            todoArray.splice(i, 1);
+            drawList();
+        });
+        newListItem.appendChild(todoDeleteButton);
+        //////////////////////////////////////
+    }
 }
 
-//
-// Inits & Event Listeners
-//
+const form = document.querySelector(".add-todo");
 
-inititialise();
+form.addEventListener("submit", addTodo);
+
+function addTodo(event) {
+    event.preventDefault();
+    console.log("hello world");
+
+    const textElement = document.querySelector("#todo-list");
+
+    if (textElement.value !== "") {
+        todoArray.push({ name: textElement.value, isDone: false, });
+        drawList();
+        form.reset();
+    }
+
+}

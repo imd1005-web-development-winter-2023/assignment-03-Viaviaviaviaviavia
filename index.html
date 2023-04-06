@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <!-- Set the page title -->
     <title>Assignment 03</title>
 
@@ -14,12 +15,17 @@
     <link rel="stylesheet" href="reset.css" />
 
     <!-- This is where all of our awesome CSS code goes -->
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="styles.css" />
 
     <!-- Set the Favicon  -->
-    <link rel="icon" href="./images/favicon/rocket.svg" type="image/svg+xml" />
-  </head>
-  <body>
+    <link rel="icon" href="./images/Pikmin_Bloom_app_icon.webp" type="image/svg+xml" />
+
+    <!--fonts, baby B)-->
+    <link rel="stylesheet" href="https://use.typekit.net/ubj1iws.css">
+</head>
+
+<body>
+
     <!--
 
       ADD YOUR ASSIGNMENT 03 CODE
@@ -29,17 +35,81 @@
       IMPORTANT CHECKLIST:
 
       - Are users able to create and delete to do list items?
-      - Have you set a favicon? (included - but it's a rocket)
-      - Do you have a css reset file? (included)
-      - Has a team member conducted a code review and left a GitHub Issue in your repo?
-      - Have you conducted a code review and left a GitHub Issue on your team member's repo?
+      - Have you set a favicon? (included - but it's a rocket) done
+      - Do you have a css reset file? (included) done
+      - Has a team member conducted a code review and left a GitHub Issue in your repo? hahahahaha oh no
+      - Have you conducted a code review and left a GitHub Issue on your team member's repo? did that at least
 
     -->
+    <header>
+        <ul>
+            <li>
+                <img src="./images/pikmin-bloom-text-logo.png" alt="Pikmin Bloom" width="271" height="108">
+            </li>
+            <li>
+                <h2>TODO List!</h2>
+            </li>
+            <li>
+                <img src="./images/pikmin-running.jpg" alt="red, yellow, and blue pikmin running along the header"
+                    width="253" height="127" class="left">
+            </li>
+            <li>
+                <img src="./images/Pikmin_Bloom_app_icon.webp" alt="Pikmin Bloom app logo" width="111" height="111"
+                    class="scoot">
+            </li>
+        </ul>
+    </header>
+
     <main>
-      <div id="app"></div>
+        <h1 class="sr-only">Pikmin Bloom Todo List</h1>
+
+        <section>
+            <div class="notepad">
+                <h2>Todo List</h2>
+                <!--form time form time-->
+                <div class="pencil">
+                    <img src="./images/pencil-tip.svg" alt="pencil shaped textbox" width="70" height="70">
+                    <form class="add-todo">
+                        <label for="todo-list" class="sr-only">Todo description</label>
+                        <input type="text" id="todo-list" name="todo" placeholder="Add an item to your list!" />
+
+                        <button type="submit">Add</button>
+                    </form>
+                </div>
+                <ul class="todo-list">
+                    <li class="done">
+                        <img src="./images/sunflower-sticker.png" alt="completed" width="55" height="55">
+                        <p>Why don't you add something to your todo list :)</p>
+                    </li>
+
+                    <!-- <li class="not-done">
+                        <img src="./images/sunflower-sticker.png" class="finished" alt="completed" width="55"
+                            height="55">
+                        <img src="./images/empty-checkbox.svg" class="unfinished" alt="incomplete" width="55"
+                            height="55">
+                        <p> empty </p>
+                        <button id="todo-1" data-todo="1">Delete</button>
+                    </li>
+
+                    <li class="not-done">
+                        <img src="./images/sunflower-sticker.png" class="finished" alt="completed" width="55"
+                            height="55">
+                        <img src="./images/empty-checkbox.svg" class="unfinished" alt="incomplete" width="55"
+                            height="55">
+                        <p> empty </p>
+                        <button id="todo-2" data-todo="2">Delete</button>
+                    </li> -->
+                </ul>
+            </div>
+        </section>
     </main>
+
+    <footer>
+        <img src="./images/pikmin-red-lying.png" alt="red pikmin chilling in the grass" width="122" height="125">
+    </footer>
 
     <!-- This is where we add our awesome JavaScript code -->
     <script src="./main.js"></script>
-  </body>
+</body>
+
 </html>
