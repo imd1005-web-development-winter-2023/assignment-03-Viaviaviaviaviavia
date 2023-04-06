@@ -70,7 +70,7 @@
                 <div class="pencil">
                     <img src="./images/pencil-tip.svg" alt="pencil shaped textbox" width="70" height="70">
                     <form class="add-todo">
-                        <label for="todo"></label>
+                        <label for="todo" class="sr-only">Todo description</label>
                         <input type="text" id="todo-list" name="todo" placeholder="Add an item to your list!" />
 
                         <button type="submit">Add</button>
@@ -78,15 +78,12 @@
                 </div>
                 <ul class="todo-list">
                     <li class="done">
-                        <img src="./images/sunflower-sticker.png" class="finished" alt="completed" width="55"
+                        <img src="./images/sunflower-sticker.png" alt="completed" width="55"
                             height="55">
-                        <img src="./images/empty-checkbox.svg" class="unfinished" alt="incomplete" width="55"
-                            height="55">
-                        <p>You've completed everything on your todo list!</p>
-                        <button id="todo-0" data-todo="0">Delete</button>
+                        <p>Why don't you add something to your todo list :)</p>
                     </li>
 
-                    <li class="not-done">
+                    <!-- <li class="not-done">
                         <img src="./images/sunflower-sticker.png" class="finished" alt="completed" width="55"
                             height="55">
                         <img src="./images/empty-checkbox.svg" class="unfinished" alt="incomplete" width="55"
@@ -102,7 +99,7 @@
                             height="55">
                         <p> empty </p>
                         <button id="todo-2" data-todo="2">Delete</button>
-                    </li>
+                    </li> -->
                 </ul>
             </div>
         </section>
