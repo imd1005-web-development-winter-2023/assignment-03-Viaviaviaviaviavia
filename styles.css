@@ -160,6 +160,10 @@ body {
 footer {
     background-color: #00C296;
     padding: 2rem;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
 }
 
 
