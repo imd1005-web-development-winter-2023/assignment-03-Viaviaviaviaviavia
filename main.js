@@ -70,19 +70,19 @@ function drawList() {
         img.width = "55";
         img.height = "55";
 
-        if (todoArray[i].isDone === true){
+        if (todoArray[i].isDone === true) {
             img.src = "./images/sunflower-sticker.png";
             img.alt = "complete";
-        } else{
-            img.src = "./images/stamp.png";
-            img.alt = "incomplete"; 
+        } else {
+            img.src = "./images/empty-checkbox.svg";
+            img.alt = "incomplete";
         }
 
-        img.addEventListener("click", (event)=>{
+        img.addEventListener("click", (event) => {
             console.log("we did it boys");
-            if(todoArray[i].isDone === true){
+            if (todoArray[i].isDone === true) {
                 todoArray[i].isDone = false;
-            }else{
+            } else {
                 todoArray[i].isDone = true;
             }
             drawList();
@@ -99,8 +99,8 @@ function drawList() {
         const todoDeleteButton = document.createElement("button");
 
         todoDeleteButton.textContent = "Delete";
-        
-        todoDeleteButton.addEventListener("click",(event)=>{
+
+        todoDeleteButton.addEventListener("click", (event) => {
             console.log(event.target, i);
             todoArray.splice(i, 1);
             drawList();
@@ -114,14 +114,14 @@ const form = document.querySelector(".add-todo");
 
 form.addEventListener("submit", addTodo);
 
-function addTodo (event){
+function addTodo(event) {
     event.preventDefault();
     console.log("hello world");
 
     const textElement = document.querySelector("#todo-list");
 
-    if(textElement.value !== ""){
-        todoArray.push({name: textElement.value, isDone: false,});
+    if (textElement.value !== "") {
+        todoArray.push({ name: textElement.value, isDone: false, });
         drawList();
         form.reset();
     }
